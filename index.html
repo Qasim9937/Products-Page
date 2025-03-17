@@ -6,24 +6,32 @@
     <title>Document</title>
     <link rel="stylesheet" href="products.css">
 </head>
-<body>
-
-    <h1>Products Page</h1>
-    <form id='form' style="margin-bottom: 10px">
-        <input id="search" placeholder="🔎 Search Products...">
-        <button id='submit'>Go</button>
-    </form>
-    <nav id="nav-bar">
-        <button class="nav-btn" id="phones">Phones & Tablets</button>
-        <button class="nav-btn" id="computers">Computers & Laptops</button>
-        <button class="nav-btn" id="electronics">Electronic Gadgets</button>
-        <button class="nav-btn" id="fashion">Fashion & Accessories</button>
-        <button class="nav-btn" id="kitchen">Kitchen Appliances</button>
-        <button class="nav-btn" id="games">Games & Consoles</button>
-    </nav>
-    <div id="products-container">
+<body onload="load()">
         
-    </div>
+        <div id="loader">
+            <div id="animation-div">
+                <div id="animation"></div>
+            </div>
+            <p>Loading...</p>
+        </div>
+
+        <h1>Products Page</h1>
+        <form id='form' style="margin-bottom: 10px">
+            <input id="search" placeholder="🔎 Search Products...">
+            <button id='submit'>Go</button>
+        </form>
+        <nav id="nav-bar">
+            <button class="nav-btn" id="phones">Phones & Tablets</button>
+            <button class="nav-btn" id="computers">Computers & Laptops</button>
+            <button class="nav-btn" id="electronics">Electronic Gadgets</button>
+            <button class="nav-btn" id="fashion">Fashion & Accessories</button>
+            <button class="nav-btn" id="kitchen">Kitchen Appliances</button>
+            <button class="nav-btn" id="games">Games & Consoles</button>
+        </nav>
+        
+        <div id="products-container"></div>
+
+        
 
     <script src="products.js"></script>
 </body>
