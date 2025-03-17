@@ -3,6 +3,12 @@ const productsDisplay = document.getElementById('products-container');
 const input = document.getElementById('search');
 const form = document.getElementById('form');
 
+const loader = document.getElementById('loader');
+
+function load(){
+    loader.style.display = 'none'
+}
+
 const products = [
         {image: 'https://ln.run/ZVOqX', name: 'Samsung 55-Inch 4K Smart TV', price: 420000, category:'Home Appliances, Electronics, Gadgets, Television, TV'},
         {image: 'https://shorturl.at/q6Zyp', name: 'Berrykey Men Trendy Zipper Turtleneck Long Sleeve Varsity Jackets Sport Coats - White', price: 7050, category:'Clothing, Fashion, Jackets, Sportswear'},
@@ -22,7 +28,15 @@ const products = [
     ];
 
 
-
+    const breakWord = (word) => {
+        switch(word.length > 55){
+            case true:
+                return word.slice(0,55) + '...';
+            case false:
+                return word
+        }
+        
+    }
 
     const displayProducts = (arr) => {
         productsDisplay.innerHTML = ``
@@ -31,9 +45,11 @@ const products = [
                 productsDisplay.innerHTML += `
                     <div id='product-card'>
                         <img src='${item.image}'>
-                        <p id='product-name'>${item.name}</p>
-                        <p id='product-price'>₦${item.price}</p>
-                        <button id='add-to-cart'>ADD TO CART</button>
+                        <div id='product-description'>
+                            <p id='product-name'>${breakWord(item.name)}</p>
+                            <p id='product-price'>₦${item.price}</p>
+                            <button id='add-to-cart'>ADD TO CART</button>
+                        </div>
                     </div>
                 `
             }
